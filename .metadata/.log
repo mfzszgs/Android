@@ -268,3 +268,12 @@ org.eclipse.core.internal.resources.ResourceException: A resource already exists
 	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
 !SUBENTRY 1 org.eclipse.core.resources 4 272 2015-01-25 00:50:41.324
 !MESSAGE A resource already exists on disk '/home/wing/git/Android/MyFirstApp/.settings'.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2015-01-25 00:59:05.292
+!MESSAGE Failed to load properties file for project 'MainActivity'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2015-01-25 01:00:09.597
+!MESSAGE Failed to load properties file for project 'MainActivity'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2015-01-25 01:05:25.970
+!MESSAGE Failed to load properties file for project 'MainActivity'
