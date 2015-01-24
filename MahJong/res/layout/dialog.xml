@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TableRow>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="16sp" />
+        <!-- 定义一个垂直的线性布局 -->
+
+        <RadioGroup
+            android:id="@+id/radiogroup"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <RadioButton
+                android:id="@+id/radiobutton_north"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/radiobutton_north" />
+
+            <RadioButton
+                android:id="@+id/radiobutton_south"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/radiobutton_south" />
+
+            <RadioButton
+                android:id="@+id/radiobutton_east"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/radiobutton_east" />
+
+            <RadioButton
+                android:id="@+id/radiobutton_west"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/radiobutton_west" />
+
+            <RadioButton
+                android:id="@+id/radiobutton_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/radiobutton_all" />
+        </RadioGroup>
+    </TableRow>
+
+    <EditText
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:singleLine="true"
+        android:hint="@string/score" />
+
+</TableLayout>
