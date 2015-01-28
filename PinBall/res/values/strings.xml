@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, PinBall!</string>
+    <string name="app_name">弹球游戏</string>
+    <string name="bn_left">LEFT</string>
+    <string name="bn_right">RIGHT</string>
+
+</resources>

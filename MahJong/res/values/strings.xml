@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MahJong</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="button_north">North</string>
+    <string name="button_south">South</string>
+    <string name="button_east">East</string>
+    <string name="button_west">West</string>
+    <string name="button_center">All</string>
+    <string name="textview_north">0</string>
+    <string name="textview_south">0</string>
+    <string name="textview_east">0</string>
+    <string name="textview_west">0</string>
+    <string name="action_settings">Settings</string>
+    <string name="input_error">"逗了吧"</string>
+    <string name="radiobutton_north">north</string>
+    <string name="radiobutton_south">south</string>
+    <string name="radiobutton_west">west</string>
+    <string name="radiobutton_east">east</string>
+    <string name="radiobutton_all">all</string>
+  	<string name="score">score</string>
+</resources>
