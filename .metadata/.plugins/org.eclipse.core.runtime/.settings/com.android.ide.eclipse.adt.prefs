@@ -1,4 +1,9 @@
 com.android.ide.eclipse.adt.fixLegacyEditors=1
+<<<<<<< HEAD
 com.android.ide.eclipse.adt.sdk=/home/wing/android-sdks
 design.structure.flyout.width=235
+=======
+com.android.ide.eclipse.adt.sdk=/home/swy/android-sdks
+com.android.ide.eclipse.adt.xmlEditor=true
+>>>>>>> 771f05849fd74f3d21ac65e427df93cebca03f23
 eclipse.preferences.version=1

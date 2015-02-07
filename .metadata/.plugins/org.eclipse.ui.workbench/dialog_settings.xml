@@ -5,8 +5,8 @@
 		<item value="0" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
-		<item value="480" key="dialogHeight"/>
-		<item value="853" key="dialogWidth"/>
+		<item value="640" key="dialogHeight"/>
+		<item value="800" key="dialogWidth"/>
 		<list key="textEntries">
 		</list>
 		<list key="orderedElements">
@@ -23,12 +23,12 @@
 		</list>
 	</section>
 	<section name="ShowViewDialog">
-		<item value="374" key="DIALOG_WIDTH"/>
+		<item value="1195" key="DIALOG_WIDTH"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="com.android.ide.eclipse.ddms.views.EmulatorControlView" key="ShowViewDialog.STORE_SELECTED_VIEW_ID"/>
-		<item value="443" key="DIALOG_HEIGHT"/>
-		<item value="464" key="DIALOG_X_ORIGIN"/>
-		<item value="96" key="DIALOG_Y_ORIGIN"/>
+		<item value="980" key="DIALOG_HEIGHT"/>
+		<item value="0" key="DIALOG_X_ORIGIN"/>
+		<item value="0" key="DIALOG_Y_ORIGIN"/>
 		<list key="ShowViewDialog.STORE_EXPANDED_CATEGORIES_ID">
 			<item value="org.eclipse.ui"/>
 			<item value="com.android.ide.eclipse.ddms.views.category"/>
