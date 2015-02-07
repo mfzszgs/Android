@@ -6,17 +6,19 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.suweiyue.myfirstapp.MainActivity" 
-    android:orientation="horizontal" >
-	<EditText android:id="@+id/edit_message"
-        android:layout_weight="2"
+    tools:context="wing.myfirstapp.MainActivity" >
+
+    <EditText
+        android:id="@+id/edit_message"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:inputType="number"
+        android:layout_weight="1"
         android:hint="@string/edit_message" />
-	<Button
+
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_send" 
-        android:onClick="sendMessage"/>
+        android:onClick="sendMessage"
+        android:text="@string/button_send" />
+
 </LinearLayout>
