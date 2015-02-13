@@ -1,0 +1,153 @@
+package github.mfzszgs.pinball.object;
+
+public class GameConf {
+	// 当前x坐标
+	private float currentX;
+	// 桌面的宽度
+	private int tableWidth;
+	// 桌面的高度
+	private int tableHeight;
+	// 每个格子的大小
+	private int size;
+	// 更新周期
+	private int period;
+	// 球拍的垂直位置
+	private int racketY;
+	// 下面定义球拍的高度和宽度
+	private int racket_width;
+	private int racket_height;
+	// 小球的大小
+	private int BALL_SIZE;
+	// 小球纵向的运行速度
+	private int ySpeed;
+	// 小球横向的运行速度
+	private int xSpeed;
+	// ballX和ballY代表小球的座标
+	private int ballX;
+	private int ballY;
+	// racketX代表球拍的水平位置
+	private int racketX;
+	// 游戏是否结束的旗标
+	private boolean isLose = false;
+
+	public float getCurrentX() {
+		return currentX;
+	}
+
+	public void setCurrentX(float currentX) {
+		this.currentX = currentX;
+	}
+
+	public int getTableWidth() {
+		return tableWidth;
+	}
+
+	public void setTableWidth(int tableWidth) {
+		this.tableWidth = tableWidth;
+	}
+
+	public int getTableHeight() {
+		return tableHeight;
+	}
+
+	public void setTableHeight(int tableHeight) {
+		this.tableHeight = tableHeight;
+	}
+
+	public int getSize() {
+		return size;
+	}
+
+	public void setSize(int size) {
+		this.size = size;
+	}
+
+	public int getPeriod() {
+		return period;
+	}
+
+	public void setPeriod(int period) {
+		this.period = period;
+	}
+
+	public int getRacketY() {
+		return racketY;
+	}
+
+	public void setRacketY(int racketY) {
+		this.racketY = racketY;
+	}
+
+	public int getRACKET_HEIGHT() {
+		return racket_height;
+	}
+
+	public void setRACKET_HEIGHT(int rACKET_HEIGHT) {
+		racket_height = rACKET_HEIGHT;
+	}
+
+	public int getRACKET_WIDTH() {
+		return racket_width;
+	}
+
+	public void setRACKET_WIDTH(int rACKET_WIDTH) {
+		racket_width = rACKET_WIDTH;
+	}
+
+	public int getBALL_SIZE() {
+		return BALL_SIZE;
+	}
+
+	public void setBALL_SIZE(int bALL_SIZE) {
+		BALL_SIZE = bALL_SIZE;
+	}
+
+	public int getySpeed() {
+		return ySpeed;
+	}
+
+	public void setySpeed(int ySpeed) {
+		this.ySpeed = ySpeed;
+	}
+
+	public int getxSpeed() {
+		return xSpeed;
+	}
+
+	public void setxSpeed(int xSpeed) {
+		this.xSpeed = xSpeed;
+	}
+
+	public int getBallX() {
+		return ballX;
+	}
+
+	public void setBallX(int ballX) {
+		this.ballX = ballX;
+	}
+
+	public int getBallY() {
+		return ballY;
+	}
+
+	public void setBallY(int ballY) {
+		this.ballY = ballY;
+	}
+
+	public int getRacketX() {
+		return racketX;
+	}
+
+	public void setRacketX(int racketX) {
+		this.racketX = racketX;
+	}
+
+	public boolean isLose() {
+		return isLose;
+	}
+
+	public void setLose(boolean isLose) {
+		this.isLose = isLose;
+	}
+
+}

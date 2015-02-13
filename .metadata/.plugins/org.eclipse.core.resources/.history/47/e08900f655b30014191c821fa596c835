@@ -1,0 +1,5 @@
+package github.mfzszgs.pinball.view;
+
+public class GameView {
+
+}

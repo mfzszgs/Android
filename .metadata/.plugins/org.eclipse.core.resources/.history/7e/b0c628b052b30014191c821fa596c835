@@ -1,0 +1,8 @@
+package org.crazyit.image.view;
+
+public class Snippet {
+	public static void main(String[] args) {
+		GameView
+	}
+}
+

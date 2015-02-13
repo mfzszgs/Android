@@ -1,0 +1,5 @@
+package github.mfzszgs.pinball.object;
+
+public class GameConf {
+
+}

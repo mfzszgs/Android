@@ -1,0 +1,37 @@
+package github.mfzszgs.pinball.object;
+
+import java.util.Random;
+
+import android.graphics.Bitmap;
+
+public class GameConf {
+	//当前x坐标
+	private float currentX = 0f;
+	// 桌面的宽度
+	private int tableWidth;
+	// 桌面的高度
+	private int tableHeight;
+	//每个格子的大小
+	private int size;
+	//更新周期
+	private int period=400;
+	// 球拍的垂直位置
+	private int racketY;
+	// 下面定义球拍的高度和宽度
+	private int RACKET_HEIGHT;
+	private int RACKET_WIDTH;
+	// 小球的大小
+	private int BALL_SIZE;
+	// 小球纵向的运行速度
+	private int ySpeed;
+	Random rand = new Random();
+	// 小球横向的运行速度
+	private int xSpeed;
+	// ballX和ballY代表小球的座标
+	private int ballX;
+	private int ballY;
+	// racketX代表球拍的水平位置
+	private int racketX;
+	// 游戏是否结束的旗标
+	private boolean isLose = false;
+}

@@ -1,0 +1,16 @@
+package github.mfzszgs.pinball.object;
+
+import android.graphics.Bitmap;
+
+public class GameConf {
+
+	private int tableHeight;
+	private int tableWidth;
+	private Bitmap bitmap;
+	private int ballX;
+	private int ballY;
+	private int racketX;
+	private int racketY;
+	private int size;
+	private float currentX;
+}

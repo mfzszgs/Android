@@ -1,0 +1,194 @@
+package github.mfzszgs.pinball.view;
+
+import github.mfzszgs.pinball.object.GameConf;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.view.MotionEvent;
+import android.view.View;
+
+public class GameView extends View {
+
+	public GameView(Context context, Paint paint, boolean isLose,
+			int tableHeight, int tableWidth, Bitmap bitmap, int ballX,
+			int ballY, int racketX, int racketY, int size, float currentX,
+			GameConf conf) {
+		super(context);
+		this.paint = paint;
+		this.isLose = isLose;
+		this.tableHeight = tableHeight;
+		this.tableWidth = tableWidth;
+		this.bitmap = bitmap;
+		this.ballX = ballX;
+		this.ballY = ballY;
+		this.racketX = racketX;
+		this.racketY = racketY;
+		this.size = size;
+		this.currentX = currentX;
+		this.conf = conf;
+	}
+
+	Paint paint = new Paint();
+	
+	private boolean isLose;
+	private int tableHeight;
+	private int tableWidth;
+	private Bitmap bitmap;
+	private int ballX;
+	private int ballY;
+	private int racketX;
+	private int racketY;
+	private int size;
+	private float currentX;
+	private GameConf conf;
+	
+	public void setGameConf(GameConf conf){
+		this.conf=conf;
+	}
+	
+	public void setIsLose(boolean isLose){
+		this.isLose=isLose;
+	}
+
+	public GameView(Context context) {
+		super(context);
+		setFocusable(true);
+	}
+
+	// 重写View的onDraw方法，实现绘画
+	public void onDraw(Canvas canvas) {
+		paint.setStyle(Paint.Style.FILL);
+		// 设置去锯齿
+		paint.setAntiAlias(true);
+		// 如果游戏已经结束
+		if (isLose) {
+			paint.setColor(Color.RED);
+			paint.setTextSize(40);
+			canvas.drawText("游戏已结束" + " h=" + tableHeight + " w=" + tableWidth,
+					50, 200, paint);
+		}
+		// 如果游戏还未结束
+		else {
+			// 设置颜色，并绘制小球
+			canvas.drawBitmap(bitmap, ballX, ballY, paint);
+			// 设置颜色，并绘制球 拍
+			for (int i = 0; i < 4; i++)
+				canvas.drawBitmap(bitmap, racketX + i * size, racketY, paint);
+			// paint.setColor(Color.rgb(80, 80, 200));
+			// canvas.drawRect(racketX, racketY, racketX + RACKET_WIDTH,
+			// racketY + RACKET_HEIGHT, paint);
+		}
+	}
+
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+		if (currentX > event.getX()) {
+			racketX -= 10;
+		} else if (currentX < event.getX()) {
+			racketX += 10;
+			;
+		}
+		invalidate();
+		currentX = event.getX();
+		return true;
+	}
+
+	public Paint getPaint() {
+		return paint;
+	}
+
+	public void setPaint(Paint paint) {
+		this.paint = paint;
+	}
+
+	public boolean isLose() {
+		return isLose;
+	}
+
+	public void setLose(boolean isLose) {
+		this.isLose = isLose;
+	}
+
+	public int getTableHeight() {
+		return tableHeight;
+	}
+
+	public void setTableHeight(int tableHeight) {
+		this.tableHeight = tableHeight;
+	}
+
+	public int getTableWidth() {
+		return tableWidth;
+	}
+
+	public void setTableWidth(int tableWidth) {
+		this.tableWidth = tableWidth;
+	}
+
+	public Bitmap getBitmap() {
+		return bitmap;
+	}
+
+	public void setBitmap(Bitmap bitmap) {
+		this.bitmap = bitmap;
+	}
+
+	public int getBallX() {
+		return ballX;
+	}
+
+	public void setBallX(int ballX) {
+		this.ballX = ballX;
+	}
+
+	public int getBallY() {
+		return ballY;
+	}
+
+	public void setBallY(int ballY) {
+		this.ballY = ballY;
+	}
+
+	public int getRacketX() {
+		return racketX;
+	}
+
+	public void setRacketX(int racketX) {
+		this.racketX = racketX;
+	}
+
+	public int getRacketY() {
+		return racketY;
+	}
+
+	public void setRacketY(int racketY) {
+		this.racketY = racketY;
+	}
+
+	public int getSize() {
+		return size;
+	}
+
+	public void setSize(int size) {
+		this.size = size;
+	}
+
+	public float getCurrentX() {
+		return currentX;
+	}
+
+	public void setCurrentX(float currentX) {
+		this.currentX = currentX;
+	}
+
+	public GameConf getConf() {
+		return conf;
+	}
+
+	public void setConf(GameConf conf) {
+		this.conf = conf;
+	}
+
+}

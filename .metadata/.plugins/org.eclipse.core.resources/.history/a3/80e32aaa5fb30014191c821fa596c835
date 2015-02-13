@@ -1,0 +1,81 @@
+package github.mfzszgs.pinball.view;
+
+import github.mfzszgs.pinball.object.GameConf;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.view.MotionEvent;
+import android.view.View;
+
+public class GameView extends View {
+
+	Paint paint = new Paint();
+	// private boolean isLose;
+	// private int tableHeight;
+	// private int tableWidth;
+	// private Bitmap bitmap;
+	// private int ballX;
+	// private int ballY;
+	// private int racketX;
+	// private int racketY;
+	// private int size;
+	// private float currentX;
+
+	private GameConf conf;
+
+	public void setGameConf(GameConf conf) {
+		this.conf = conf;
+	}
+
+	public void setIsLose(boolean isLose) {
+		this.conf.setLose(isLose);
+	}
+
+	public GameView(Context context) {
+		super(context);
+		setFocusable(true);
+	}
+
+	// 重写View的onDraw方法，实现绘画
+	public void onDraw(Canvas canvas) {
+		paint.setStyle(Paint.Style.FILL);
+		// 设置去锯齿
+		paint.setAntiAlias(true);
+		// 如果游戏已经结束
+		if (conf.isLose()) {
+			paint.setColor(Color.RED);
+			paint.setTextSize(40);
+			canvas.drawText("游戏已结束" + " h=" + conf.getTableHeight() + " w="
+					+ conf.getTableWidth(), 50, 200, paint);
+		}
+		// 如果游戏还未结束
+		else {
+			// 设置颜色，并绘制小球
+			canvas.drawBitmap(conf.getBitmap(), conf.getBallX(),
+					conf.getBallY(), paint);
+			// 设置颜色，并绘制球 拍
+			for (int i = 0; i < 4; i++)
+				canvas.drawBitmap(conf.getBitmap(), conf.getRacketX() + i
+						* conf.getSize(), conf.getRacketY(), paint);
+			// paint.setColor(Color.rgb(80, 80, 200));
+			// canvas.drawRect(racketX, racketY, racketX + RACKET_WIDTH,
+			// racketY + RACKET_HEIGHT, paint);
+		}
+	}
+
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+		if (conf.getCurrentX() > event.getX()) {
+			conf.setRacketX(conf.getRacketX()-10);
+		} else if (conf.getCurrentX() < event.getX()) {
+			conf.setRacketX(conf.getRacketX()+10);
+			;
+		}
+		invalidate();
+		conf.getCurrentX() = event.getX();
+		return true;
+	}
+
+}

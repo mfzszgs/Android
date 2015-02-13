@@ -1,6 +1,5 @@
 package org.crazyit.image;
 
-import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -53,7 +52,7 @@ public class PinBall extends Activity {
 	private int BALL_SIZE;
 	// 小球纵向的运行速度
 	private int ySpeed;
-	Random rand = new Random();
+//	Random rand = new Random();
 	// 小球横向的运行速度
 	private int xSpeed;
 	// ballX和ballY代表小球的座标
@@ -65,6 +64,7 @@ public class PinBall extends Activity {
 	private boolean isLose = false;
 	private BitmapDrawable bitmapdrawable;
 	private Bitmap bitmap;
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -99,9 +99,6 @@ public class PinBall extends Activity {
 		gameView.setBackgroundColor(Color.rgb(255,255, 255));
 		setContentView(gameView);
 		
-//		TextView text_height = null,text_width=null;
-//		text_height.setText(tableHeight);
-//		text_width.setText(tableWidth);
 		//设置ｂｉｔｍａｐ
 		bitmapdrawable=(BitmapDrawable)getResources().getDrawable(R.drawable.size);
 		bitmap=Bitmap.createScaledBitmap(bitmapdrawable.getBitmap(), size, size, true);

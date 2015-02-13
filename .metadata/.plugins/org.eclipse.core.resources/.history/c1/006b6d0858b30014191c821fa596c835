@@ -1,0 +1,75 @@
+package github.mfzszgs.pinball.view;
+
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.view.MotionEvent;
+import android.view.View;
+
+public class GameView extends View {
+
+	Paint paint = new Paint();
+	private boolean isLose;
+	private String tableHeight;
+	private String tableWidth;
+	private Bitmap bitmap;
+	private Rect ballX;
+	private RectF ballY;
+	private int racketX;
+	private int size;
+	private float racketY;
+	private float currentX;
+	
+	
+	public void setIsLose(boolean isLose){
+		this.isLose=isLose;
+	}
+
+	public GameView(Context context) {
+		super(context);
+		setFocusable(true);
+	}
+
+	// 重写View的onDraw方法，实现绘画
+	public void onDraw(Canvas canvas) {
+		paint.setStyle(Paint.Style.FILL);
+		// 设置去锯齿
+		paint.setAntiAlias(true);
+		// 如果游戏已经结束
+		if (isLose) {
+			paint.setColor(Color.RED);
+			paint.setTextSize(40);
+			canvas.drawText("游戏已结束" + " h=" + tableHeight + " w=" + tableWidth,
+					50, 200, paint);
+		}
+		// 如果游戏还未结束
+		else {
+			// 设置颜色，并绘制小球
+			canvas.drawBitmap(bitmap, ballX, ballY, paint);
+			// 设置颜色，并绘制球 拍
+			for (int i = 0; i < 4; i++)
+				canvas.drawBitmap(bitmap, racketX + i * size, racketY, paint);
+			// paint.setColor(Color.rgb(80, 80, 200));
+			// canvas.drawRect(racketX, racketY, racketX + RACKET_WIDTH,
+			// racketY + RACKET_HEIGHT, paint);
+		}
+	}
+
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+		if (currentX > event.getX()) {
+			racketX -= 10;
+		} else if (currentX < event.getX()) {
+			racketX += 10;
+			;
+		}
+		invalidate();
+		currentX = event.getX();
+		return true;
+	}
+
+}
